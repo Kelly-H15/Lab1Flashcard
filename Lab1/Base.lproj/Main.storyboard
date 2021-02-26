@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ysl-2q-tQw">
-                                <rect key="frame" x="50" y="244" width="314" height="298"/>
+                                <rect key="frame" x="50" y="86" width="314" height="298"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Azul" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-ET-GEO">
-                                        <rect key="frame" x="0.0" y="77" width="314" height="221"/>
+                                        <rect key="frame" x="0.0" y="42" width="314" height="256"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -29,7 +29,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is Blue in Spanish?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmA-NO-Jpa">
-                                        <rect key="frame" x="0.0" y="77" width="314" height="221"/>
+                                        <rect key="frame" x="0.0" y="42" width="314" height="256"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <gestureRecognizers/>
@@ -38,18 +38,57 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="kMF-kA-f83" appends="YES" id="eZF-Ha-0Xf"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ9-ve-ZWy">
+                                <rect key="frame" x="90" y="474" width="234" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Anaranjado">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wvj-WY-o1L" appends="YES" id="BbC-tU-GSp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bv-qh-ha5">
+                                <rect key="frame" x="90" y="567" width="234" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Azul">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NUU-nc-BVU" appends="YES" id="ZVl-tg-E2G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42k-W8-km4">
+                                <rect key="frame" x="90" y="654" width="234" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Rojo">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6HQ-BV-p15" appends="YES" id="RhX-qb-5gt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="Ln0-ET-GEO" id="ObB-pf-QQK"/>
+                        <outlet property="btnOptionOne" destination="YQ9-ve-ZWy" id="Klf-vo-QOH"/>
+                        <outlet property="btnOptionThree" destination="42k-W8-km4" id="0ad-1c-cSy"/>
+                        <outlet property="btnOptionTwo" destination="6bv-qh-ha5" id="DOX-I7-Nfa"/>
+                        <outlet property="card" destination="Ysl-2q-tQw" id="PZ2-mX-G0H"/>
                         <outlet property="frontLabel" destination="dmA-NO-Jpa" id="ppJ-Bt-TJJ"/>
                     </connections>
                 </viewController>
@@ -57,6 +96,21 @@
                 <tapGestureRecognizer id="kMF-kA-f83">
                     <connections>
                         <action selector="didTapOnButtons:" destination="BYZ-38-t0r" id="2uK-ku-05n"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Wvj-WY-o1L">
+                    <connections>
+                        <action selector="didTapButtonOne:" destination="BYZ-38-t0r" id="0ZY-2v-m1g"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="NUU-nc-BVU">
+                    <connections>
+                        <action selector="didTapButtonTwo:" destination="BYZ-38-t0r" id="4hP-qb-bqM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6HQ-BV-p15">
+                    <connections>
+                        <action selector="didTapButtonThree:" destination="BYZ-38-t0r" id="Y3e-GU-ksu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
