@@ -66,6 +66,12 @@ class ViewController: UIViewController {
             return;
         }
     }
+
+// New flashcard
+    func updateFlashcard(question: String, answer:String) {
+        frontLabel.text = question
+        backLabel.text = answer
+    }
   
     // Tapped button One
     @IBAction func didTapButtonOne(_ sender: Any) {
@@ -85,7 +91,16 @@ class ViewController: UIViewController {
         btnOptionThree.isHidden = true;
     }
   
+   
+    override func prepare (for segue:UIStoryboardSegue, sender: Any?) {
     
+        let navigationController = segue.destination as!
+        UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+    }
     
     
     

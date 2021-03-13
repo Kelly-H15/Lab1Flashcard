@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21963C825F9E2010080A5A6 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21963C725F9E2010080A5A6 /* CreationViewController.swift */; };
 		A2FFDF3C25E1A62B009627E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FFDF3B25E1A62B009627E3 /* AppDelegate.swift */; };
 		A2FFDF3E25E1A62B009627E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FFDF3D25E1A62B009627E3 /* SceneDelegate.swift */; };
 		A2FFDF4025E1A62B009627E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FFDF3F25E1A62B009627E3 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21963C725F9E2010080A5A6 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		A2FFDF3825E1A62B009627E3 /* Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2FFDF3B25E1A62B009627E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2FFDF3D25E1A62B009627E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A228445625F40CA100BF7B23 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				A2FFDF4425E1A62E009627E3 /* Assets.xcassets */,
+				A2FFDF3D25E1A62B009627E3 /* SceneDelegate.swift */,
+				A2FFDF3B25E1A62B009627E3 /* AppDelegate.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		A2FFDF2F25E1A62A009627E3 = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +111,10 @@
 		A2FFDF3A25E1A62B009627E3 /* Lab1 */ = {
 			isa = PBXGroup;
 			children = (
-				A2FFDF3B25E1A62B009627E3 /* AppDelegate.swift */,
-				A2FFDF3D25E1A62B009627E3 /* SceneDelegate.swift */,
+				A228445625F40CA100BF7B23 /* Misc */,
 				A2FFDF3F25E1A62B009627E3 /* ViewController.swift */,
+				A21963C725F9E2010080A5A6 /* CreationViewController.swift */,
 				A2FFDF4125E1A62B009627E3 /* Main.storyboard */,
-				A2FFDF4425E1A62E009627E3 /* Assets.xcassets */,
 				A2FFDF4625E1A62E009627E3 /* LaunchScreen.storyboard */,
 				A2FFDF4925E1A62E009627E3 /* Info.plist */,
 			);
@@ -261,6 +272,7 @@
 				A2FFDF4025E1A62B009627E3 /* ViewController.swift in Sources */,
 				A2FFDF3C25E1A62B009627E3 /* AppDelegate.swift in Sources */,
 				A2FFDF3E25E1A62B009627E3 /* SceneDelegate.swift in Sources */,
+				A21963C825F9E2010080A5A6 /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
