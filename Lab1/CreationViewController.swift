@@ -16,11 +16,24 @@ class CreationViewController: UIViewController {
    
     @IBOutlet weak var answerTextField: UITextField!
     
+    @IBOutlet weak var extraAnswerOne: UITextField!
+    @IBOutlet weak var extraAnswerTwo: UITextField!
+    @IBOutlet weak var extraAnswerThree: UITextField!
+    
+    
+    
+    var initialQuestion: String?
+    var initialAnswer: String?
+    
+    
     
     override func viewDidLoad() {
        super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        questionTextField.text = initialQuestion
+        answerTextField.text = initialAnswer
     }
     
     @IBAction func didTaponCancel(_ sender: Any) {
@@ -35,19 +48,25 @@ class CreationViewController: UIViewController {
     // Get the text in the answer text field
         let answerText = answerTextField.text
         
+        
     // Check if empty
-        if questionText == nil || answerText == nil{
-            let alert = UIAlertController(title:"Missing Text", message:"You need to enter both a question and an answer", preferredStyle:.alert)
+        if questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty
+        {
+            
+        let alert = UIAlertController(title:"Missing Text", message:"You need to enter both a question and an answer", preferredStyle:.alert)
             present(alert,animated:true)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         }
         
         
         else {
-        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
+            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!,extraAnswerOne: "Verde", extraAnswerTwo: "Rojo", extraAnswerThree: "Azul")
+            dismiss(animated: true)
         }
         
-        //Dismiss
-        dismiss(animated: true)
+      
+        
     }
     
     
