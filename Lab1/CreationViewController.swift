@@ -48,6 +48,10 @@ class CreationViewController: UIViewController {
     // Get the text in the answer text field
         let answerText = answerTextField.text
         
+        let extraAnswerOneText = extraAnswerOne.text
+        let extraAnswerTwoText = extraAnswerTwo.text
+        let extraAnswerThreeText = extraAnswerThree.text 
+        
         
     // Check if empty
         if questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty
@@ -61,7 +65,7 @@ class CreationViewController: UIViewController {
         
         
         else {
-            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!,extraAnswerOne: "Verde", extraAnswerTwo: "Rojo", extraAnswerThree: "Azul")
+            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!,extraAnswerOne: extraAnswerOneText!, extraAnswerTwo: extraAnswerTwoText!, extraAnswerThree:extraAnswerThreeText!)
             dismiss(animated: true)
         }
         
