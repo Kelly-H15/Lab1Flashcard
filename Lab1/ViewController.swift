@@ -87,19 +87,69 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        
+        // Start with flashcard invisible and alightly smaller in size
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x:0.75, y: 0.75)
+        
+        btnOptionOne.alpha = 0.0
+        btnOptionOne.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        //Animation
+        UIView.animate(withDuration: 0.6 , delay: 0.5 , usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity
+           
+            
+            // Animation for button two
+            self.btnOptionTwo.alpha = 0.0
+            self.btnOptionTwo.transform = CGAffineTransform.identity.scaledBy(x:0.99, y: 0.99)
+    
+            //Animation for buton three
+            self.btnOptionThree.alpha = 0.0
+            self.btnOptionThree.transform = CGAffineTransform.identity.scaledBy(x:0.99, y: 0.99)
+           
+        })
+            
+            UIView.animate(withDuration: 0.6 , delay: 0.5 , usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+                self.btnOptionOne.alpha = 1.0
+                self.btnOptionOne.transform = CGAffineTransform.identity.scaledBy(x: 0.99, y: 0.99)
+        })
+       
+        UIView.animate(withDuration: 0.6 , delay: 0.5 , usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.btnOptionTwo.alpha = 1.0
+            self.btnOptionTwo.transform = CGAffineTransform.identity.scaledBy(x: 0.99, y: 0.99)
+    })
+        UIView.animate(withDuration: 0.6 , delay: 0.5 , usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.btnOptionThree.alpha = 1.0
+            self.btnOptionThree.transform = CGAffineTransform.identity.scaledBy(x: 0.99, y: 0.99)
+    })
+        
+    }
+    
 // code for tapping card
     @IBAction func didTapOnButtons(_ sender: Any) {
+        flipFlashcard()
+    }
+    
+    func flipFlashcard(){
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if (self.frontLabel.isHidden == false )
+        {
+            self.frontLabel.isHidden = true;
+            return;
+        }
+        else if (self.frontLabel.isHidden == true)
+        {
+            self.frontLabel.isHidden = false;
+            return;
+        }
+        })
+
         // toggle with card
-        if (frontLabel.isHidden == false )
-        {
-        frontLabel.isHidden = true;
-            return;
-        }
-        else if (frontLabel.isHidden == true)
-        {
-            frontLabel.isHidden = false;
-            return;
-        }
+        
     }
 
 // New flashcard
@@ -197,6 +247,64 @@ class ViewController: UIViewController {
             prevButton.isEnabled = true
         }
     }
+
+    func animateCardOut(){
+        UIView.animate(withDuration: 0.15, animations: { self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: { finished in
+            
+            // Update Labels
+            self.updateLabels()
+            
+            // Run other animation
+            self.animateCardIn()
+            
+        })
+        
+    }
+    
+    func animateCardIn(){
+        
+        // Start on the right side (don't animate this)
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        btnOptionOne.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        btnOptionTwo.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        btnOptionThree.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        // Animate card going back to its original position
+        UIView.animate(withDuration: 0.15) {
+            self.card.transform = CGAffineTransform.identity
+            self.btnOptionOne.transform = CGAffineTransform.identity
+            self.btnOptionTwo.transform = CGAffineTransform.identity
+            self.btnOptionThree.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    func animateCardOutPrev(){
+        UIView.animate(withDuration: 0.15, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0)
+            self.btnOptionOne.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0)
+            self.btnOptionTwo.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0)
+            self.btnOptionThree.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0)
+        }, completion: {finished in
+            self.updateLabels()
+            self.animateCardInPrev()
+        })
+    }
+    
+    func animateCardInPrev(){
+        
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0)
+        btnOptionOne.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0)
+        btnOptionTwo.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0)
+        btnOptionThree.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0)
+        
+        UIView.animate(withDuration: 0.15){
+            self.card.transform = CGAffineTransform.identity
+            self.btnOptionOne.transform = CGAffineTransform.identity
+            self.btnOptionTwo.transform = CGAffineTransform.identity
+            self.btnOptionThree.transform = CGAffineTransform.identity
+        }
+    }
     
 
     // Tapped button One
@@ -227,6 +335,11 @@ class ViewController: UIViewController {
         
         //Update buttons
         updateNextPrevButtons()
+        
+        //Animate
+        animateCardOut()
+        
+        
     }
     
     
@@ -240,6 +353,9 @@ class ViewController: UIViewController {
         
         //Update buttons
         updateNextPrevButtons()
+        
+        // Animate
+        animateCardOutPrev()
     }
     
    
